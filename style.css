@@ -1,0 +1,451 @@
+    /* Reseteo márgenes y paddings */
+*{
+    padding: 0; 
+    margin: 0; 
+    /* establezco una misma fuente para todo el html  */
+    font-family: 'Nunito', sans-serif; 
+    /* quito subrayado de vínculos */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* estructura (separado por: header - section - footer):
+1)grilla padre
+2)area de cada item
+3)flexbox
+4)estilos*/
+
+/* ------------------------------------------------------- */
+
+/* 1) Establezco grid por áreas: header*/
+#grilla-header{  /* contenedor padre */
+    display: grid;
+    grid-template-areas: 
+    /* una fila y tres columnas:
+    una columnaa para el título,
+    otro para subtitulo y la última para el menú de nav */
+    "titulo subtitulo nav";
+    grid-template-rows: 60px;
+    grid-template-columns: 16% 13% 1fr;
+    grid-column-gap: 3px;
+    grid-row-gap: 1px;
+}
+
+/* 2) Establezco areas para cada etiqueta del header*/
+h1{
+    grid-area: titulo;
+} 
+
+.sub-header{ /* párrafo de clase sub (subtítulo) */
+    grid-area: subtitulo;
+}
+
+.nav-header{
+    grid-area: nav;
+}
+
+/* 3) Aplico flexbox en el menú de navegación del header*/
+.nav-header{
+    display: flex;
+    flex-direction: row; /*predeterminado */
+    /* en el medio del "renglon" */
+    align-items: center; 
+    /* centrado en toda la "columna" */
+    justify-content: center; 
+    flex-wrap: nowrap;
+}
+
+/* 4) aplico estilos a etiquetas y clases del header*/
+h1{
+    color: white;
+    text-align: right;
+    padding-top: 7px;
+    padding-right: 8px
+}
+
+.sub-header{
+    color: white;
+    text-align: center;
+    padding-top: 7px
+}
+
+.nav-header{ 
+    width: 99%;
+    padding: 4px;
+}
+
+/* items hijos del flex-box del header */
+.grid-hijo{
+    /* aplico gradiente de fondo, simulando botón en el menu nav */
+    background-image: linear-gradient(to bottom, #E26A2C, #FDA65D);
+    font-size: 15px;
+    box-shadow: 7px -5px 15px -1px rgba(115,57,18,1);
+    text-shadow: 1px 4px 10px rgb(92, 88, 88);
+    border-radius: 10px;
+    padding: 13px;
+    margin: 2px;
+}
+
+/* aplico borde a las áreas establecidas y fondo*/
+.border-header{
+    background-image: linear-gradient(to bottom, #E26A2C, #FDA65D);
+    border: 1px solid black;
+}
+
+/* ------------------------------------------------------- */
+
+/* 1) Establezco grid por áreas: section */
+#grilla-section{ /* (contenedor padre) */
+    display: grid;
+    grid-template-areas: 
+    "article video";
+    grid-template-rows: auto;
+    /* grid-template-rows: 610px; */
+    grid-template-columns: 70% 1fr;
+    grid-column-gap: 3px;
+    grid-row-gap: 1px;
+}
+
+/* 2) Establezco areas para cada etiqueta del section */
+article{
+    grid-area: article;
+}
+
+video{
+    grid-area: video;
+}
+
+/* 3) Aplico flexbox en el section*/
+.border-section{
+    display: flex;
+    flex-direction: column;
+    /* en el medio de la columna" */
+    align-items: center ; 
+    /* centrado en renglón" */
+    justify-items: center; 
+    flex-wrap: wrap;
+} 
+
+/* ------------------------------------------------------- */
+
+/* 4) aplico estilos a etiquetas y clases*/
+h2{
+    font-size: 30px;
+    margin-top: 8px;
+}
+
+h3{
+    font-size: 20px;
+    text-align: center;
+    /* h3 tiene dos líneas de texto, y como abarca toda la columna, no se nota que está centrado por el flexbox, entonces alineo también con text-align */
+    text-shadow: 1px 4px 10px rgb(92, 88, 88);
+}
+
+.p-section{
+    padding-bottom: 15px;
+}
+
+video{
+    width: 98%; /* si pongo 100%, me abarca mas de la pantalla completa, teniendo que deslizar para el costado para ver la  página por completo */
+    height: 590px;
+    /* height: auto; */
+    padding: 3px;
+} 
+
+/* items hijos del flex-box del section */
+.grilla-hijo-section{
+    margin: 10px; /* separación entre ellos */
+}
+
+/* aplico borde a las áreas establecidas*/
+.border-section{
+    background-image: url(./lined_paper.png);
+    border: 1px solid black;
+    margin-top: 3px;
+}
+
+/* ------------------------------------------------------- */
+
+/* 1) Establezco grid por áreas: footer*/
+#grilla-footer{ /* (contenedor padre) */
+    display: grid;
+    grid-template-areas: 
+    "objetivo objetivo contacto"
+    "logo ir-arriba contacto";
+    grid-template-rows: auto;
+    grid-template-columns: 50% 20% 1fr;
+    grid-column-gap: 3px;
+    grid-row-gap: 1px;
+}
+
+/* 2) Establezco areas para cada clase del footer*/
+.nav-footer{
+    grid-area: contacto;
+} 
+
+.objetivo-footer{
+    grid-area: objetivo;
+}
+
+.logo-foot{
+    grid-area: logo;
+}
+
+.boton-arriba{
+    grid-area: ir-arriba;
+}
+
+/* 3) Aplico flexbox en el menú de contacto*/
+#contacto{
+    display: flex;
+    flex-direction: column;
+    /* justificado a la izq o al inicio */
+    /* align-content: flex-start;  */
+    /* centrado en toda la "columna" */
+    /* justify-content: center;  */
+    /* flex-wrap: nowrap; */
+}
+
+.caja-links{
+    display: flex;
+    align-items: flex-start;
+}
+
+/* 4) aplico estilos a etiquetas y clases del footer*/
+footer{
+    padding-top: 1px;
+}
+
+h4{
+    font-size: 18px;
+    text-shadow: 1px 4px 10px rgb(92, 88, 88);
+    text-align: left;
+    text-decoration: underline;
+}
+
+.p-foot{
+    font-size: 20px;
+    text-shadow: 1px 4px 10px rgb(92, 88, 88);
+    text-align: center;
+    font-style: italic;
+}
+
+.p-foot-links{
+    text-decoration: underline;
+    margin: 5px;
+}
+
+.iconos{
+    width: 30px;
+    height: 30px;
+    margin-right: 7px;
+}
+
+#contacto{
+    padding-left: 10px;
+    width: 97%;
+}
+
+.atribucion-iconos{
+    font-size: small;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+#grilla-footer{
+    color: white;
+    size: 100%;
+}
+
+.border-footer{
+    background-image: linear-gradient(to bottom, #E26A2C, #FDA65D);
+    border: 1px solid black;
+    margin-top: 3px;
+}
+
+.objetivo-footer{
+    padding: 10px;
+}
+
+.text-foot{
+    background-image: linear-gradient(to top, #E26A2C, #FDA65D);
+    padding: 30px;
+}
+
+.boton-arriba{
+    background-image: linear-gradient(to top, #E26A2C, #FDA65D);
+    padding: 30px;
+}
+
+#footer-nosotros{
+    background-image: linear-gradient(to top, #E26A2C, #FDA65D);
+}
+
+/* adaptación para mobile */
+@media screen and (max-width: 768px) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .grilla-header{
+        width: 768px
+    }
+    
+    .nav-header{
+        width: 147%;
+    }
+
+    h1{
+        font-size: 20px;
+        padding-top: 18px;
+    }
+
+    .sub-header{
+            font-size: 15px;
+            padding-top: 10px;
+    }
+    
+    video{
+        padding-top: 0;
+        margin-top: 0;
+        height: 768px;
+        width: 100%;
+    }
+
+    h4{
+        font-size: 13px;
+        text-shadow: 1px 4px 10px rgb(92, 88, 88);
+        text-align: left;
+        text-decoration: underline;
+    }
+
+    .p-foot{
+        font-size: 20px;
+        text-shadow: 1px 4px 10px rgb(92, 88, 88);
+        text-align: center;
+        font-style: italic;
+    }
+    
+    .boton-arriba{
+        font-size: 17px;
+        background-image: linear-gradient(to top, #E26A2C, #FDA65D);
+        padding: 7px;
+    }
+
+    video{
+        width: 250%;
+    }
+
+    footer{
+        width: 145%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+        header h1{
+        font-size: medium;
+    }
+    
+    .border-header{
+        width: 103%;
+    }
+
+    video{
+        padding-bottom: 36px;
+    }
+
+    footer{
+        width: 144%;
+    }
+
+    .border-footer{
+        padding-right: 2px;
+    }
+
+    .boton-arriba{
+        font-size: 17px;
+    }
+
+}
+
+@media screen and (max-width: 360px) {
+    .sub-header{
+        font-size: 8px;
+    }
+    
+    video{
+        width: 350px;
+        height: 640px;
+        padding-bottom: 9px;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 411px) {
+    .sub-header{
+        font-size: 10px;
+    }
+    
+    .nav-header{
+        width: 103%;
+    }
+    
+    #contacto{
+        width: 126%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .sub-header{
+        font-size: 8px;
+    }
+    footer{
+        width: 160%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .nav-header{
+        width: auto;
+    }
+    #contacto{
+        width: 137%;
+    }
+    video{
+        padding-bottom: 9px;
+    }
+}
+
+/* @media screen and (max-width: 414px) and (max-height:736px) { */
+@media screen and (max-width: 414px) {
+    #contacto{
+        width: 137%;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    header h1{
+        font-size: 12px;
+    }
+    
+    .sub-header{
+        font-size: 9px;
+    }
+
+    video{
+        width: 270px;
+        height: 653px;
+    }
+
+    .border-footer{
+        width: auto;
+    }
+
+    .boton-arriba{
+        font-size: small;
+    }
+
+    #contacto{
+        width: 354px;
+    }
+}
