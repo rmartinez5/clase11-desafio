@@ -14,28 +14,47 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+
+    <!-- Enlace a la biblioteca de animación CSS  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> 
 </head>
 
 <body link="white" vlink="white" id="arriba">
 
-    <header id="grilla-header">
-        <h1 class="border-header"> Yuppies </h1>
-        <p class="border-header sub-header"> Gestión de <br> expertos ® </p>
-        <nav class="border-header nav-header" > 
-            <div class="grid-hijo"> <a href="index.html"> Inicio </a> </div>
-            <div class="grid-hijo"> <a href="nosotros.html"> Nosotros </a> </div>
-            <div class="grid-hijo"> <a href="metodologia.html"> Metodología </a> </div>
-            <div class="grid-hijo"> <a href="servicios.html"> Servicios </a> </div>
-            <div class="grid-hijo"> <a href="areas.html"> Áreas </a> </div>
-            <div class="grid-hijo"> <a href="valores.html"> Valores </a> </div>
-            <div class="grid-hijo"> <a href="index.html#grilla-footer"> Contacto </a></div>
-        </nav>
-    </header>
+    <div id="grilla-nosotros">
+        <header id="header-nosotros">
+            <h1 class="border-header"> Yuppies </h1>
+            <nav class="border-header nav-header" > 
+                <div class="grid-hijo animated headShake"> <a href="index.html"> Inicio </a> </div>
+                <div class="grid-hijo animated headShake"> <a href="nosotros.html"> Nosotros </a> </div>
+                <div class="grid-hijo animated headShake"> <a href="metodologia.html"> Metodología </a> </div>
+                <div class="grid-hijo animated headShake"> <a href="servicios.html"> Servicios </a> </div>
+                <div class="grid-hijo animated headShake"> <a href="areas.html"> Áreas </a> </div>
+                <div class="grid-hijo animated headShake"> <a href="valores.html"> Valores </a> </div>
+                <div class="grid-hijo animated headShake"> <a href="index.html#grilla-footer"> Contacto </a></div>
+            </nav>
+        </header>
+        
+        <section id="imagen-business" class="border">
+            <img src="./yuppies business.png" alt="business">
+        </section>
+        <article class="parrafo border">
+            <h2 class="parrafo-hijo animated tada"> Nuestro equipo </h2>
+            <p class="parrafo-hijo">Yuppie cuenta con una red de profesionales que integran la</p>
+            <h3> #ComunidadYuppies. </h2>
+            <p class="parrafo-hijo"> Provienen de diversas ramas. Contamos
+            Asesores internos y externos que se caracterizan por ser apasionados en su disciplina y emprendedores en su profesión.
+            Exigentes, muy autocríticos y visionarios. </p>
+            <h3 class="parrafo-hijo">“ Yuppies es un punto de encuentro de todos las disciplinas que contribuyen al funcionamiento de una organización”</h3>
+
+        </article>
     
-    
-    <!-- modificar -->
-    <footer id="footer-nosotros">
-        <a href="index.html" >Contacto </a>
-    </footer>
+        <!-- modificar -->
+        <footer id="footer-nosotros" class="border">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non laborum in, autem ab atque, corporis sit architecto provident neque ut dolorum obcaecati fuga doloribus rerum quas vero incidunt iure. Saepe.</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>

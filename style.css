@@ -9,13 +9,14 @@
     font-weight: bold;
 }
 
-/* estructura (separado por: header - section - footer):
+/* estructura index (separado por: header - section - footer):
 1)grilla padre
 2)area de cada item
 3)flexbox
 4)estilos*/
 
-/* ------------------------------------------------------- */
+
+/* --------------------------INDEX----------------------- */
 
 /* 1) Establezco grid por áreas: header*/
 #grilla-header{  /* contenedor padre */
@@ -27,7 +28,7 @@
     "titulo subtitulo nav";
     grid-template-rows: 60px;
     grid-template-columns: 16% 13% 1fr;
-    grid-column-gap: 3px;
+    grid-column-gap: 5px;
     grid-row-gap: 1px;
 }
 
@@ -63,6 +64,8 @@ h1{
     padding-right: 8px
 }
 
+
+
 .sub-header{
     color: white;
     text-align: center;
@@ -84,6 +87,11 @@ h1{
     border-radius: 10px;
     padding: 13px;
     margin: 2px;
+}
+
+.grid-hijo:hover{
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }
 
 /* aplico borde a las áreas establecidas y fondo*/
@@ -134,6 +142,11 @@ h2{
     margin-top: 8px;
 }
 
+.tada:hover{
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
 h3{
     font-size: 20px;
     text-align: center;
@@ -163,6 +176,8 @@ video{
     border: 1px solid black;
     margin-top: 3px;
 }
+
+
 
 /* ------------------------------------------------------- */
 
@@ -281,7 +296,79 @@ h4{
     background-image: linear-gradient(to top, #E26A2C, #FDA65D);
 }
 
-/* adaptación para mobile */
+/* --------------------------NOSOTROS-------------------- */
+
+/* estructura nosotros:
+1)grilla padre
+2)area de cada item
+3)flexbox
+4)estilos*/
+
+/* 1) Establezco grid por áreas:*/
+#grilla-nosotros{
+    display: grid;
+    grid-template-areas: 
+    "headerN headerN headerN"
+    "imagen parrafo parrafo"
+    "footerN footerN footerN";
+    grid-template-rows: auto;
+    grid-template-columns: 30% 1fr;
+    grid-column-gap: 3px;
+    grid-row-gap: 1px;
+}
+
+/* 2) Establezco areas para cada etiqueta del header*/
+#header-nosotros{
+    grid-area: headerN;
+}
+
+#imagen-business{
+    grid-area: imagen;
+}
+
+.parrafo{
+    grid-area: parrafo;
+}
+
+#footer-nosotros{
+    grid-area: footerN;
+}
+
+/* 3) Aplico flexbox en el menú de navegación del header*/
+#header-nosotros{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* 4) aplico estilos a etiquetas y clases del header*/
+.border{
+    border: 1px solid black;
+}
+
+.parrafo{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    flex-wrap: nowrap;
+}   
+
+#footer-nosotros{
+    padding: 20px;
+}
+
+.parrafo-hijo{
+    padding: 10px;
+}
+
+.parrafo h3{
+    font-size: 40px;
+}
+
+
+/* -------------------adaptación para mobile-------------- */
+
 @media screen and (max-width: 768px) {
     *{
         margin: 0;
@@ -447,5 +534,11 @@ h4{
 
     #contacto{
         width: 354px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #imagen-business{
+        display: none;
     }
 }
